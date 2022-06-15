@@ -1,19 +1,21 @@
 package com.example.googlemaps.app
 
 import android.app.Application
-import com.example.googlemaps.data.repository.RouteRepository
-import com.example.googlemaps.domain.repository.RouteRepositoryImpl
-import com.google.maps.GeoApiContext
+import com.example.googlemaps.app.di.appModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 class App : Application() {
 
-    private val geoApiContext: GeoApiContext by lazy {
-        GeoApiContext.Builder()
-            .apiKey("AIzaSyAPDbocY5Wb7fM1cVe_VCNBjHHg-ldFuiU")
-            .build()
-    }
+    override fun onCreate() {
+        super.onCreate()
 
-    val routeRepository: RouteRepository by lazy {
-        RouteRepositoryImpl(geoApiContext)
+        startKoin {
+            androidLogger(Level.ERROR)
+            androidContext(this@App)
+            modules(appModule)
+        }
     }
 }

@@ -7,7 +7,7 @@ import com.example.googlemaps.domain.model.Place
 import com.example.googlemaps.domain.repository.RawPlacesReader
 import com.google.android.gms.maps.model.LatLng
 
-class MainViewModel : ViewModel() {
+class MainViewModel(private val routeRepository: RouteRepository) : ViewModel() {
 
     val barcelona = LatLng(41.385064, 2.173403)
     val zaragoza = LatLng(41.648823, -0.889085)
@@ -15,7 +15,7 @@ class MainViewModel : ViewModel() {
 
     fun getPlaces(resources: Resources): List<Place> = RawPlacesReader(resources).read()
 
-    fun getPaths(routeRepository: RouteRepository): List<LatLng> {
+    fun getPaths(): List<LatLng> {
         return routeRepository.getRoute(barcelona, madrid)
     }
 }

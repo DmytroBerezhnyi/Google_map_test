@@ -17,15 +17,14 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.model.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MapsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMapsBinding
 
-    private val vm: MainViewModel by lazy {
-        ViewModelProvider(this).get(MainViewModel::class.java)
-    }
+    private val vm: MainViewModel by viewModel()
 
     private val bicycleIcon: BitmapDescriptor by lazy {
         val color = ContextCompat.getColor(this, R.color.purple_500)
@@ -91,7 +90,7 @@ class MapsActivity : AppCompatActivity() {
         googleMap.addMarker(MarkerOptions().position(vm.barcelona).title("Marker in Barcelona"))
         googleMap.addMarker(MarkerOptions().position(vm.madrid).title("Marker in Madrid"))
 
-        val paths = vm.getPaths((application as App).routeRepository)
+        val paths = vm.getPaths()
 
         //Draw the polyline
         if (paths.isNotEmpty()) {

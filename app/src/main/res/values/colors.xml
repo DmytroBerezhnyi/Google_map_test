@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_background">#F7F9FC</color>
+    <color name="shipment_status_success">#5F7CFC00</color>
+    <color name="shipment_status_in_progress">#FFEB3B</color>
+    <color name="shipment_status_error">#F44336</color>
 </resources>

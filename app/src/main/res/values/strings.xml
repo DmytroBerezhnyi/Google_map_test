@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Google Maps</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string name="car_name">Car name:</string>
+    <string name="general_load">General load:</string>
+    <string name="total_length">Total length:</string>
+    <string name="total_outlets">Total outlets:</string>
+    <string name="passages">Passages</string>
 </resources>

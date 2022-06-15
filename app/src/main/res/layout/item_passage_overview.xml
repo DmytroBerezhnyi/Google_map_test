@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_info"
+                app:layout_constraintBottom_toBottomOf="@+id/text_car_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_car_title" />
+
+            <TextView
+                android:id="@+id/text_car_title"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/car_name"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_car_name"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/text_car_title"
+                app:layout_constraintEnd_toStartOf="@+id/image_details"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/text_car_title"
+                app:layout_constraintTop_toTopOf="@id/text_car_title"
+                tools:text="Дракон (Часть 1)" />
+
+            <TextView
+                android:id="@+id/text_full_load_title"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/general_load"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_car_title" />
+
+            <TextView
+                android:id="@+id/text_full_load"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_full_load_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/text_full_load_title"
+                app:layout_constraintTop_toTopOf="@+id/text_full_load_title"
+                tools:text="36 шт." />
+
+            <TextView
+                android:id="@+id/text_total_length_title"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/total_length"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_full_load_title" />
+
+            <TextView
+                android:id="@+id/text_total_length"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_total_length_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/text_total_length_title"
+                app:layout_constraintTop_toTopOf="@+id/text_total_length_title"
+                tools:text="67 km" />
+
+            <TextView
+                android:id="@+id/text_total_outlets_title"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:text="@string/total_outlets"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_total_length_title" />
+
+            <TextView
+                android:id="@+id/text_total_outlets"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_total_outlets_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/text_total_outlets_title"
+                app:layout_constraintTop_toTopOf="@+id/text_total_outlets_title"
+                tools:text="17" />
+
+            <View
+                android:id="@+id/view_shipment_status"
+                android:layout_width="8dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/shipment_status_success" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
